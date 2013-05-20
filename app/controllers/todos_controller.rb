@@ -1,14 +1,13 @@
 class TodosController < ApplicationController
   def index
-    @todos = Todo.all
+    @todos = current_user.todos
   end
-
   def new
     @todo = Todo.new
   end
   
   def create
-    @todo = Todo.create(params[:todo])
+    current_user.todos.create params[:todo]
     redirect_to todos_path
   end
 end
