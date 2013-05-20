@@ -1,1 +1,6 @@
 <p data-role='description'>Description Here</p>
+<%= form_for :session, url: session_path do |form| %>
+  <%= form.label :email_address %>
+  <%= form.text_field :email_address %>
+  <%= form.submit "Sign in" %>
+<% end %>
